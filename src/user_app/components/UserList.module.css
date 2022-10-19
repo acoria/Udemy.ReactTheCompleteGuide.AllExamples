@@ -1,0 +1,11 @@
+.userList {
+    background-color: white;
+    padding: 0.5rem;
+}
+.userList p {
+  border-color: aliceblue;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 5px;
+  padding: 0.5rem;
+}

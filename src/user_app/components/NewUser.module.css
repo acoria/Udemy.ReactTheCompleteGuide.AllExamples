@@ -1,0 +1,19 @@
+.newUser {
+  display: flex;
+  flex-direction: column;
+}
+.newUser label {
+  color: blueviolet;
+  margin-right: 2rem;
+}
+
+.newUser input {
+  margin-right: 5rem;
+}
+
+.newUser button {
+  background-color: blueviolet;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: aliceblue;
+}
