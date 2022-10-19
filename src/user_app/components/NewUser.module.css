@@ -1,10 +1,16 @@
 .newUser {
   display: flex;
   flex-direction: column;
+  background-color: white;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  padding: 2rem;
 }
 .newUser label {
   color: blueviolet;
   margin-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 .newUser input {
@@ -16,4 +22,6 @@
   padding: 0.5rem;
   border-radius: 8px;
   color: aliceblue;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }

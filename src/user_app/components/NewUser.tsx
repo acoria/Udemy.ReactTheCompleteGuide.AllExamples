@@ -8,8 +8,7 @@ export const NewUser: React.FC<{ onNewUser: (newUser: User) => void }> = (
   const [username, setUsername] = useState("");
   const [age, setAge] = useState(0);
 
-  const onSubmitHandler: FormEventHandler = (event: FormEvent) => {
-    event.preventDefault();
+  const addNewUserHandler = () => {
     props.onNewUser(new User(username, age));
   };
 
@@ -23,17 +22,11 @@ export const NewUser: React.FC<{ onNewUser: (newUser: User) => void }> = (
 
   return (
     <div className={styles.newUser}>
-      <form onSubmit={onSubmitHandler}>
-        <label>Username</label>
-        <input
-          type="text"
-          onChange={onUsernameChangedHandler}
-          value={username}
-        />
-        <label>Age (Years)</label>
-        <input type="number" onChange={onAgeChangedHandler} value={age} />
-        <button type="submit">Add</button>
-      </form>
+      <label>Username</label>
+      <input type="text" onChange={onUsernameChangedHandler} value={username} />
+      <label>Age (Years)</label>
+      <input type="number" onChange={onAgeChangedHandler} value={age} />
+      <button onClick={addNewUserHandler}>Add user</button>
     </div>
   );
 };
