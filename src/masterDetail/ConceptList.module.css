@@ -1,0 +1,17 @@
+.conceptList {
+  margin-top: 0.5rem;
+}
+.conceptList button {
+  display: flex;
+  width: 100%;
+  background-color: gray;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  margin-bottom: 0.1rem;
+  flex-direction: column;
+}
+
+.conceptList.selected {
+  background-color: black;
+  color: white;
+}
