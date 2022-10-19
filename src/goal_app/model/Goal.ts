@@ -1,5 +1,5 @@
 export class Goal {
-  static instanceCounter: number = 0;
+  private static instanceCounter: number = 0;
   public id: number;
   constructor(public name: string) {
     Goal.instanceCounter = Goal.instanceCounter + 1;
