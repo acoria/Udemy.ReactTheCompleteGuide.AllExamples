@@ -1,16 +1,16 @@
 .colors {
-  /* Red (142,11,33) */
-  color: #8e0b21;
+  /* Red (167,12,12) */
+  color: #a70c0c;
 
-  /* Pink (142,11,87) */
-  color: #8e0b57;
+  /* Rose (199,179,199) */
+  color: #c7b3c7;
 
-  /* Purple (109,11,142) */
-  color: #6d0b8e;
+  /* Purple (109,18,141) */
+  color: #6d128d;
 
-  /* Brown (71,38,6) */
-  color: #472606;
+  /* Gray (129,129,126) */
+  color: #81817e;
 
-  /* Black (0,0,0) */
-  color: #000000;
+  /* Black (15,3,3) */
+  color: #0f0303;
 }
