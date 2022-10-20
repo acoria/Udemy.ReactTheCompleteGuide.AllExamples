@@ -2,14 +2,18 @@ import { Button } from "../Button";
 import { Card } from "../Card";
 import { ModalError } from "./ModalError";
 import styles from "./ErrorModal.module.css";
+import { Backdrop } from "./overlay/Backdrop";
+import { ModalOverlay } from "./overlay/ModalOverlay";
+import ReactDOM from "react-dom";
+import React from "react";
 
 export const ErrorModal: React.FC<{
   error: ModalError;
   onDismiss: () => void;
 }> = (props) => {
-  return (
-    <div>
-      <div className={styles.backdrop} onClick={props.onDismiss} />
+  const ErrorBackdrop = () => <Backdrop onClick={props.onDismiss} />;
+  const ErrorModalOverlay = () => (
+    <ModalOverlay>
       <Card className={styles.errorModal}>
         <header className={styles.header}>{props.error.title}</header>
         <div className={styles.content}>
@@ -19,6 +23,19 @@ export const ErrorModal: React.FC<{
           <Button onClick={props.onDismiss}>Okay</Button>
         </footer>
       </Card>
-    </div>
+    </ModalOverlay>
+  );
+
+  return (
+    <>
+      {ReactDOM.createPortal(
+        <ErrorBackdrop />,
+        document.getElementById("backdrop-root")!!
+      )}
+      {ReactDOM.createPortal(
+        <ErrorModalOverlay />,
+        document.getElementById("overlay-root")!!
+      )}
+    </>
   );
 };

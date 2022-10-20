@@ -12,6 +12,8 @@ export const UserApp: React.FC = () => {
 
   return (
     <div>
+      <div id="backdrop-root"/>
+      <div id="overlay-root"/>
       <NewUser onNewUser={onNewUserHandler} />
       <UserList users={users} />
     </div>

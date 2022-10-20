@@ -1,3 +1,7 @@
 .playground h1{
     color: red;
 }
+
+.playground button{
+    background-color: black;
+}
