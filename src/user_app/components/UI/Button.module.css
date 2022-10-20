@@ -1,15 +1,16 @@
 button {
-  background-color: blueviolet;
+  background-color: #6d0b8e;
   font-size: medium;
   padding: 0.5rem;
   border-radius: 8px;
-  color: aliceblue;
+  color: white;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
   width: 100%;
+  border: 0;
   cursor: pointer;
 }
 .button:hover,
 .button:active {
-  background-color: purple;
+  background-color: #8e0b57;
 }

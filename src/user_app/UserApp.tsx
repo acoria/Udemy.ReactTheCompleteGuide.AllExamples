@@ -12,7 +12,6 @@ export const UserApp: React.FC = () => {
 
   return (
     <div>
-      <h2>User App</h2>
       <NewUser onNewUser={onNewUserHandler} />
       <UserList users={users} />
     </div>

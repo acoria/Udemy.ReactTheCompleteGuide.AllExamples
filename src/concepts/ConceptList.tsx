@@ -1,5 +1,5 @@
 import React from "react";
-import { IConcept } from "../concept/IConcept";
+import { IConcept } from "./IConcept";
 import styles from "./ConceptList.module.css";
 
 export const ConceptList: React.FC<{

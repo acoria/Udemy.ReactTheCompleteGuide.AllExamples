@@ -5,7 +5,7 @@
 }
 
 .newUser label {
-  color: blueviolet;
+  color: black;
   font-size: medium;
   font-weight: 600;
   margin-right: 2rem;
@@ -17,9 +17,4 @@
   margin-right: 5rem;
   font-size: medium;
   width: 100%;
-}
-
-.newUser footer{
-  /* display: flex;
-  justify-content: center; */
 }

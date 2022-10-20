@@ -1,0 +1,23 @@
+.conceptList {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+}
+
+.conceptList button {
+  display: flex;
+  background-color: #6d0b8e;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  margin-bottom: 0.1rem;
+  flex-direction: column;
+  padding-right: 4rem;
+  border: 0;
+}
+
+.conceptList button:hover,
+.conceptList button:hover,
+.conceptList.selected {
+  background-color: #8e0b57;
+  /* background-color: #472606; */
+}

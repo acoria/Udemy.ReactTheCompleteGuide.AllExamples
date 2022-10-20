@@ -1,5 +1,5 @@
 import { concepts } from "./Concepts";
-import { MasterDetail } from "./masterDetail/MasterDetail";
+import { MasterDetail } from "./concepts/Concepts";
 
 function App() {
   return (
