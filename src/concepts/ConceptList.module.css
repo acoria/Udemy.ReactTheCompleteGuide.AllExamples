@@ -6,7 +6,10 @@
 
 .conceptList button {
   display: flex;
-  background-color: #6d0b8e;
+  color: black;
+  background-color: #c7b3c7;
+  font-size: large;
+  font-weight: 600;
   padding: 0.5rem;
   border-radius: 0.3rem;
   margin-bottom: 0.1rem;
@@ -18,6 +21,7 @@
 .conceptList button:hover,
 .conceptList button:hover,
 .conceptList.selected {
-  background-color: #8e0b57;
+  color: white;
+  background-color: #6d128d;
   /* background-color: #472606; */
 }

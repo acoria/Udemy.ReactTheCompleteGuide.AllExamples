@@ -3,7 +3,8 @@
   padding-left: 0;
 }
 .userList li {
-  background-color: #8e0b21;
+  background-color: #c7b3c7;
+  color: #6d128d;
   border-radius: 5px;
   padding: 0.5rem;
   margin-bottom: 0.2rem;

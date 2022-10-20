@@ -1,6 +1,7 @@
 .errorModal {
   position: fixed;
   padding: 0rem;
+  background-color: whitesmoke;
   /* removes the corners if it was rounded */
   overflow: hidden;
   top: 20vh;
@@ -8,7 +9,7 @@
 }
 
 .header {
-  background: #4f005f;
+  background: #6d128d;
   padding: 1rem;
   color: white;
   font-size: large;

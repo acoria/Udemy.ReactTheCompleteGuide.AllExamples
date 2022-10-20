@@ -1,5 +1,5 @@
 button {
-  background-color: #6d0b8e;
+  background-color: #6d128d;;
   font-size: medium;
   padding: 0.5rem;
   border-radius: 8px;
@@ -12,5 +12,5 @@ button {
 }
 .button:hover,
 .button:active {
-  background-color: #8e0b57;
+  background-color: black;
 }
