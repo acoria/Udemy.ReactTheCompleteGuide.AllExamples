@@ -1,4 +1,4 @@
-import { User } from "../model/User";
+import { User } from "../../model/User";
 import styles from "./UserList.module.css";
 
 export const UserList: React.FC<{ users: User[] }> = (props) => {

@@ -1,0 +1,25 @@
+.newUser {
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+}
+
+.newUser label {
+  color: blueviolet;
+  font-size: medium;
+  font-weight: 600;
+  margin-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.newUser input {
+  margin-right: 5rem;
+  font-size: medium;
+  width: 100%;
+}
+
+.newUser footer{
+  /* display: flex;
+  justify-content: center; */
+}
