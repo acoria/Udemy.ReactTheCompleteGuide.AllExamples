@@ -1,12 +1,12 @@
-.userList {
-    background-color: white;
-    padding: 0.5rem;
-    border-radius: 8px;
+.userList ul {
+  list-style-type: none;
+  padding-left: 0;
 }
-.userList p {
+.userList li {
   border-color: aliceblue;
   border: 1px solid black;
   background-color: white;
   border-radius: 5px;
   padding: 0.5rem;
+  margin-bottom: 0.2rem;
 }

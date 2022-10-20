@@ -1,0 +1,37 @@
+.errorModal {
+  position: fixed;
+  padding: 0rem;
+  /* removes the corners if it was rounded */
+  overflow: hidden;
+  top: 20vh;
+  left: 40%;
+}
+
+.header {
+  background: #4f005f;
+  padding: 1rem;
+  color: white;
+  font-size: large;
+}
+
+.content {
+  padding: 1rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: end;
+  padding: 1rem;
+}
+.footer button{
+  width: auto;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+}
