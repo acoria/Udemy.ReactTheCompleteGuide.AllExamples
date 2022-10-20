@@ -1,10 +1,10 @@
 import { concepts } from "./Concepts";
-import { MasterDetail } from "./concepts/Concepts";
+import { Concepts } from "./concepts/Concepts";
 
 function App() {
   return (
     <div>
-      <MasterDetail concepts={concepts} />
+      <Concepts concepts={concepts} />
     </div>
   );
 }

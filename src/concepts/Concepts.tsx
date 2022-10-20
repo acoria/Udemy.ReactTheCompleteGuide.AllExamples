@@ -4,7 +4,7 @@ import { ConceptDetails } from "./ConceptDetails";
 import { ConceptList } from "./ConceptList";
 import styles from "./Concepts.module.css";
 
-export const MasterDetail: React.FC<{ concepts: IConcept[] }> = (props) => {
+export const Concepts: React.FC<{ concepts: IConcept[] }> = (props) => {
   const [selectedConcept, setSelectedConcept] = useState(props.concepts[0]);
 
   const onSelectConceptHandler = (selectedConcept: IConcept) => {
@@ -12,9 +12,11 @@ export const MasterDetail: React.FC<{ concepts: IConcept[] }> = (props) => {
   };
 
   return (
-    <div className={styles.concepts}>
-      <h1>React examples</h1>
-      <div className={styles.conceptsButtons}>
+    <>
+    <div className={styles.conceptTitle}>
+      <h1 className={styles.concepts} id="app_title">React examples</h1>
+      </div>
+      <div className={styles.concepts}>
         <ConceptList
           concepts={props.concepts}
           onSelectConcept={onSelectConceptHandler}
@@ -22,6 +24,6 @@ export const MasterDetail: React.FC<{ concepts: IConcept[] }> = (props) => {
         />
         <ConceptDetails concept={selectedConcept} />
       </div>
-    </div>
+</>
   );
 };

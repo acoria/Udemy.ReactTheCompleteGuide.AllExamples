@@ -1,11 +1,12 @@
-.concepts h1 {
-  margin-left: 1rem;
-  padding: 1rem;
+.conceptTitle {
   background-color: #6d128d;
+  margin: 1rem 1rem 0rem 1rem;
+  padding: 0.6rem 0.2rem 0.1rem 0rem;
   border-radius: 10px;
 }
-.conceptsButtons {
+
+.concepts {
   display: flex;
   flex-direction: row;
-  margin: 1rem;
+  margin: 0rem 1rem 1rem 1rem;
 }
