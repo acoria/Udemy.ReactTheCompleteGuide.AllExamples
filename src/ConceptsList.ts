@@ -6,7 +6,11 @@ import { Playground } from "./playground_app/Playground";
 import { UserApp } from "./user_app/UserApp";
 
 export const concepts: IConcept[] = [
-  { name: "Login", topics: ["LocalStorage", "UseEffect"], component: LoginApp },
+  {
+    name: "Login",
+    topics: ["LocalStorage", "UseEffect", "Debouncing", "UseReducer"],
+    component: LoginApp,
+  },
   {
     name: "User App",
     description: "The app allows for adding users to a list.",

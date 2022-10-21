@@ -6,7 +6,7 @@ export const Toolbar: React.FC<{
 }> = (props) => {
   return (
     <div className={styles.toolbar}>
-      <h3>Login</h3>
+      <h3>Login App</h3>
       <div className={styles.menu}>
         {props.isLoggedIn && <button onClick={props.onLogout}>Logout</button>}
       </div>
