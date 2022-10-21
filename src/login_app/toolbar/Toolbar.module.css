@@ -1,0 +1,27 @@
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  background-color: #6d128d;
+  margin-bottom: 0.5rem;
+  height: 5vh;
+  width: 30rem;
+}
+
+.toolbar h3 {
+  display: flex;
+  margin: 0.5rem 0 0.5rem 1rem;
+}
+
+.menu {
+  display: flex;
+  justify-content: right;
+  width: 100%;
+}
+
+.menu button {
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  padding: 0 0.5rem;
+  width: auto;
+  border: 1px solid black;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.75);
+}

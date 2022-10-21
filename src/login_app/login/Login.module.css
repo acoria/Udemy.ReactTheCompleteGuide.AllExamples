@@ -1,0 +1,42 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  font-size: large;
+}
+
+.login button {
+  background-color: #6d128d;
+  color: white;
+  border-radius: 20px;
+  width: 30%;
+  margin-left: 35%;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.75);
+}
+
+.credentials {
+  display: flex;
+  flex-direction: row;
+}
+
+.labels {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+}
+
+.labels label {
+  margin: 0.5rem;
+  font-size: large;
+}
+
+.inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputs input {
+  margin: 0.5rem;
+  font-size: large;
+}

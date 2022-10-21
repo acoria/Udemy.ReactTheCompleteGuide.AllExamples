@@ -17,9 +17,9 @@ export const ConceptDetails: React.FC<{ concept: IConcept }> = (props) => {
               <li key={index}>{subject}</li>
             ))}
           </ul>
+          <h4>Example</h4>
         </>
       )}
-      <h4>Example</h4>
       {props.concept.component({}, {})}
     </div>
   );
