@@ -1,4 +1,4 @@
-import { concepts } from "./Concepts";
+import { concepts } from "./ConceptsList";
 import { Concepts } from "./concepts/Concepts";
 
 function App() {

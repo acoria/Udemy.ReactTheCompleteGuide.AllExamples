@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { User } from "../../model/User";
 import { Button } from "../UI/Button";
 import { Card } from "../UI/Card";
@@ -10,15 +10,11 @@ export const NewUser: React.FC<{ onNewUser: (newUser: User) => void }> = (
   props
 ) => {
   const [username, setUsername] = useState("");
-  const [age, setAge] = useState<string>("");
+  const age = useRef<HTMLInputElement>(null);
   const [error, setError] = useState<ModalError>();
 
   const onUsernameChangedHandler = (event: any) => {
     setUsername(event.target.value);
-  };
-
-  const onAgeChangedHandler = (event: any) => {
-    setAge(event.target.value);
   };
 
   const errorModalDismissHandler = () => {
@@ -35,8 +31,11 @@ export const NewUser: React.FC<{ onNewUser: (newUser: User) => void }> = (
           className={styles.newUser}
           onSubmit={(event) => {
             event.preventDefault();
-
-            if (username.trim().length === 0 || age.trim().length === 0) {
+            if (
+              username.trim().length === 0 ||
+              age.current == null ||
+              age.current.value.trim().length === 0
+            ) {
               setError(
                 new ModalError(
                   "Not enough information",
@@ -45,15 +44,15 @@ export const NewUser: React.FC<{ onNewUser: (newUser: User) => void }> = (
               );
               return;
             }
-
-            if (+age < 1) {
+            //+ converts string to number
+            if (+age.current.value < 1) {
               setError(new ModalError("Invalid age", "Enter an age > 0"));
               return;
             }
 
-            props.onNewUser(new User(username, age));
+            props.onNewUser(new User(username, age.current.value));
             setUsername("");
-            setAge("");
+            age.current.value = "";
           }}
         >
           <label htmlFor="username">Username</label>
@@ -64,12 +63,7 @@ export const NewUser: React.FC<{ onNewUser: (newUser: User) => void }> = (
             value={username}
           />
           <label htmlFor="age">Age (Years)</label>
-          <input
-            id="age"
-            type="number"
-            onChange={onAgeChangedHandler}
-            value={age}
-          />
+          <input id="age" type="number" ref={age} />
           <Button type="submit">Add user</Button>
         </form>
       </Card>
