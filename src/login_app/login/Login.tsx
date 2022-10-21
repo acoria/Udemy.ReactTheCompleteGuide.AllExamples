@@ -1,16 +1,36 @@
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { Card } from "../UI/Card";
 import styles from "./Login.module.css";
+import { IAction } from "./reducer/IAction";
+import { PasswordChangeAction } from "./reducer/PasswordChangeAction";
+
+type PasswordState = { password: string; isPasswordValid: boolean };
+const passwordReducer = (prevState: PasswordState, action: IAction) => {
+  if (action.type === PasswordChangeAction.TYPE) {
+    const newPassword = (action as PasswordChangeAction).password;
+    return {
+      password: newPassword,
+      isPasswordValid: newPassword.trim().length > 2,
+    };
+  }
+  //There is also the possibility to access the previous state by prevState variable
+
+  //Default
+  return { password: "", isPasswordValid: false };
+};
 
 export const Login: React.FC<{ onLogin: () => void }> = (props) => {
   const [email, setEmail] = useState("me@reactTraining.com");
-  const [isPasswordValid, setIsPasswordValid] = useState(false);
   const [password, setPassword] = useState("");
   const [isFormValid, setIsFormValid] = useState(false);
 
+  const [passwordState, dispatchPassword] = useReducer(passwordReducer, {
+    password: "",
+    isPasswordValid: false,
+  });
+
   useEffect(() => {
     const timerIdentifier = setTimeout(() => {
-      setIsPasswordValid(password.trim().length > 2);
       setIsFormValid(email.includes("@") && password.trim().length > 2);
       console.log("Validity changed");
     }, 500);
@@ -46,14 +66,20 @@ export const Login: React.FC<{ onLogin: () => void }> = (props) => {
             />
             <div
               className={`${styles.inputs} ${
-                isPasswordValid ? "" : styles.invalid
+                passwordState.isPasswordValid ? "" : styles.invalid
               }`}
             >
               <input
                 id="password"
                 type="password"
                 value={password}
-                onChange={(event) => setPassword(event.currentTarget.value)}
+                onChange={(event) => {
+                  setPassword(event.currentTarget.value);
+                  //this is only used to demonstrate the useReducer functionality
+                  dispatchPassword(
+                    new PasswordChangeAction(event.currentTarget.value)
+                  );
+                }}
               />
             </div>
           </div>
