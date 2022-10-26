@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { useEffect, useReducer, useState } from "react";
+import { AuthContext } from "../store/AuthContext";
 import { Card } from "../UI/Card";
 import styles from "./Login.module.css";
 
@@ -22,7 +24,8 @@ const passwordReducer = (
   //Default
   return { password: "", isPasswordValid: false };
 };
-export const Login: React.FC<{ onLogin: () => void }> = (props) => {
+export const Login: React.FC = () => {
+  const authContext = useContext(AuthContext);
   const [email, setEmail] = useState("me@reactTraining.com");
   const [isFormValid, setIsFormValid] = useState(false);
 
@@ -54,7 +57,7 @@ export const Login: React.FC<{ onLogin: () => void }> = (props) => {
         className={styles.login}
         onSubmit={(event) => {
           event.preventDefault();
-          props.onLogin();
+          authContext.loginHandler();
         }}
       >
         <h3>Login</h3>

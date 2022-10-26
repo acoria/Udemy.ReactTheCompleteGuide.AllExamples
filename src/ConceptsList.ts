@@ -2,13 +2,27 @@ import { IConcept } from "./concepts/IConcept";
 import { ExpensesApp } from "./expensesApp/ExpensesApp";
 import { GoalApp } from "./goal_app/components/GoalApp";
 import { LoginApp } from "./login_app/LoginApp";
+import { LoginAppWithAuth } from "./login_app_with_auth_component/LoginAppWithAuth";
 import { Playground } from "./playground_app/Playground";
 import { UserApp } from "./user_app/UserApp";
 
 export const concepts: IConcept[] = [
   {
+    name: "Login with AuthComponent",
+    topics: [
+      "React context with a separate AuthComponent handling login/logout",
+    ],
+    component: LoginAppWithAuth,
+  },
+  {
     name: "Login",
-    topics: ["LocalStorage", "UseEffect", "Debouncing", "UseReducer"],
+    topics: [
+      "LocalStorage",
+      "Debouncing",
+      "useEffect",
+      "useReducer",
+      "useContext",
+    ],
     component: LoginApp,
   },
   {

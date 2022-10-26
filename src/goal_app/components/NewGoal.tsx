@@ -18,7 +18,8 @@ export const NewGoal: React.FC<{
         <input
           value={goalName}
           onChange={(event) => {
-            setGoalName(event.currentTarget.value);
+            // setGoalName(event.currentTarget.value);
+            setGoalName(event.target.value);
           }}
         />
         <button type="submit">Add</button>

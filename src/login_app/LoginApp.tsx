@@ -20,7 +20,7 @@ export const LoginApp: React.FC = () => {
 
   return (
     <div className={styles.loginApp}>
-      <Toolbar isLoggedIn={isLoggedIn} onLogout={onLogoutHandler} />
+      <Toolbar isAuthenticated={isLoggedIn} onLogout={onLogoutHandler} />
       {isLoggedIn ? <LoggedIn /> : <Login onLogin={onLoginHandler} />}
     </div>
   );
