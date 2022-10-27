@@ -1,0 +1,17 @@
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  color: white;
+  background-color: #b94517;
+}
+
+.toolbar h1 {
+  padding-left: 1rem;
+}
+
+.cartInfo {
+  width: 80%;
+  display: flex;
+  justify-content: end;
+}
