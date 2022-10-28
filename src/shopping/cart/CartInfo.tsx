@@ -10,7 +10,9 @@ export const CartInfo: React.FC = () => {
       <button>
         {/* <img src=""/> */}
         <div className={styles.cartName}>Your Cart</div>
-        <div className={styles.itemAmount}>{cartContext.itemAmount}</div>
+        <div className={styles.itemAmount}>
+          {cartContext.totalCartItemCount}
+        </div>
       </button>
     </div>
   );

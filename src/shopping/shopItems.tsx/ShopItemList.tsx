@@ -12,9 +12,9 @@ export const ShopItemList: React.FC<{ items: Item[] }> = (props) => {
 
   return (
     <Card className={styles.shopItemList}>
-      {props.items.map((item, index) => (
+      {props.items.map((item) => (
         // wrapInDivider(index, shopItem(item, index))
-        <ShopItem key={index} item={item} />
+        <ShopItem key={item.id} item={item} />
       ))}
     </Card>
   );
