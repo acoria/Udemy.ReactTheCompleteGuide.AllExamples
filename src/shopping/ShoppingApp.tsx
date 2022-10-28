@@ -1,20 +1,23 @@
 import { useEffect, useState } from "react";
 import { CartContentsInfo } from "./cart/CartContentsInfo";
+import { CartModal } from "./cart/CartModal";
 import { CartContext } from "./cart/store/CartContext";
 import { FoodList } from "./FoodList";
 import { ICartItem } from "./model/ICartItem";
 import { Item } from "./model/Item";
 import { ShopItemList } from "./shopItems.tsx/ShopItemList";
-import styles from "./Shopping.module.css";
+import styles from "./ShoppingApp.module.css";
 import { Toolbar } from "./toolbar/Toolbar";
 import { Card } from "./ui/Card";
 
-export const Shopping: React.FC = () => {
+export const ShoppingApp: React.FC = () => {
   const [totalCartItemCount, setTotalCartItemCount] = useState(0);
+  const [totalCartAmount, setTotalCartAmount] = useState(0);
   //TODO: add empty array
   const [cartItems, setCartItems] = useState<ICartItem[]>([
-    { itemId: FoodList[1].id, amount: 0 },
+    { item: FoodList[0], amount: 1 },
   ]);
+  const [displayCart, setDisplayCart] = useState(false);
 
   const onAddItemToCartHandler = (item: Item, amount: number) => {
     const newCardItems = new CartContentsInfo().addToCartContents(
@@ -34,10 +37,17 @@ export const Shopping: React.FC = () => {
     setCartItems(newCardItems);
   };
 
+  const onOpenCartHandler = () => {
+    setDisplayCart(true);
+  };
+  const onCloseCartHandler = () => {
+    setDisplayCart(false);
+  };
+
   useEffect(() => {
-    setTotalCartItemCount(
-      new CartContentsInfo().calculateTotalItemCount(cartItems)
-    );
+    const cartContentsInfo = new CartContentsInfo();
+    setTotalCartItemCount(cartContentsInfo.calculateTotalItemCount(cartItems));
+    setTotalCartAmount(cartContentsInfo.calculateTotalCartAmount(cartItems));
   }, [cartItems]);
 
   return (
@@ -45,11 +55,17 @@ export const Shopping: React.FC = () => {
       value={{
         cartItems: cartItems,
         totalCartItemCount: totalCartItemCount,
-        addItemHandler: onAddItemToCartHandler,
-        removeItemHandler: onRemoveItemFromCartHandler,
+        totalCartAmount: totalCartAmount,
+        addItemToCartHandler: onAddItemToCartHandler,
+        removeItemFromCartHandler: onRemoveItemFromCartHandler,
+        openCartHandler: onOpenCartHandler,
+        closeCartHandler: onCloseCartHandler,
       }}
     >
+      <div id="backdrop"></div>
+      <div id="overlay"></div>
       <div className={styles.shopping}>
+        {displayCart && <CartModal />}
         <Toolbar />
         <Card className={styles.description}>
           <h1>Delicious Food, Delivered To You</h1>

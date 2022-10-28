@@ -1,0 +1,6 @@
+.moduleOverlay {
+  position: fixed;
+  top: 20vh;
+  left: 20%;
+  overflow: hidden;
+}

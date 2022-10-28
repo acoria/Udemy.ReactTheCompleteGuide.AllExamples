@@ -22,6 +22,7 @@
   background-color: #343434;
   font-size: medium;
   text-align: center;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.75);
 }
 
 .description h1 {

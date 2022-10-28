@@ -7,8 +7,8 @@ export const CartInfo: React.FC = () => {
 
   return (
     <div className={styles.cartInfo}>
-      <button>
-        {/* <img src=""/> */}
+      <button onClick={cartContext.openCartHandler}>
+        {/* <img src="../images/shopping_cart.png"/> */}
         <div className={styles.cartName}>Your Cart</div>
         <div className={styles.itemAmount}>
           {cartContext.totalCartItemCount}

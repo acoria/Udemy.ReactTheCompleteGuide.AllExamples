@@ -32,7 +32,7 @@ export const ShopItem: React.FC<{ item: Item }> = (props) => {
         </div>
         <button
           onClick={() => {
-            cartContext.addItemHandler(props.item, +amount);
+            cartContext.addItemToCartHandler(props.item, +amount);
             setAmount("0");
           }}
         >

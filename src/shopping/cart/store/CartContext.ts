@@ -3,8 +3,11 @@ import { FoodList } from "../../FoodList";
 import { Item } from "../../model/Item";
 
 export const CartContext = React.createContext({
-  cartItems: [{ itemId: FoodList[0].id, amount: 0 }],
+  cartItems: [{ item: FoodList[0], amount: 0 }],
   totalCartItemCount: 0,
-  addItemHandler: (item: Item, amount: number) => {},
-  removeItemHandler: (item: Item, amount: number) => {},
+  totalCartAmount: 0,
+  addItemToCartHandler: (item: Item, amount: number) => {},
+  removeItemFromCartHandler: (item: Item, amount: number) => {},
+  openCartHandler: () => {},
+  closeCartHandler: () => {},
 });

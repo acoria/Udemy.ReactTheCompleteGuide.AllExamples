@@ -1,2 +1,22 @@
 .cart {
+  display: flex;
+  flex-direction: column;
+  width: 60rem;
+}
+
+.amount{
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid black;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.amount h1{
+    font-size: x-large;
+}
+
+.totalLabel{
+    margin-left: 1rem;
+    width: 88%
 }

@@ -1,4 +1,6 @@
+import { Item } from "./Item";
+
 export interface ICartItem {
-  itemId: number;
+  item: Item;
   amount: number;
 }

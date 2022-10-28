@@ -4,14 +4,14 @@ import { GoalApp } from "./goal_app/components/GoalApp";
 import { LoginApp } from "./login_app/LoginApp";
 import { LoginAppWithAuth } from "./login_app_with_auth_component/LoginAppWithAuth";
 import { Playground } from "./playground_app/Playground";
-import { Shopping } from "./shopping/Shopping";
+import { ShoppingApp } from "./shopping/ShoppingApp";
 import { UserApp } from "./user_app/UserApp";
 
 export const concepts: IConcept[] = [
   {
     name: "Food ordering",
     description: "Order food online",
-    component: Shopping,
+    component: ShoppingApp,
   },
   {
     name: "Login with AuthComponent",

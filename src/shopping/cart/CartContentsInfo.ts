@@ -41,7 +41,7 @@ export class CartContentsInfo {
     const newCartItems = [...cartItems];
     const cartItem = cartItems[item.id];
     if (cartItem == null) {
-      newCartItems[item.id] = { itemId: item.id, amount: amount };
+      newCartItems[item.id] = { item: item, amount: amount };
     } else {
       newCartItems[item.id] = {
         ...cartItem,
@@ -58,5 +58,14 @@ export class CartContentsInfo {
     });
 
     return totalItemCount;
+  }
+
+  calculateTotalCartAmount(cartItems: ICartItem[]): number {
+    let totalAmount = 0;
+    cartItems.forEach(
+      (cartItem) =>
+        (totalAmount = totalAmount + cartItem.amount * +cartItem.item.price)
+    );
+    return +totalAmount.toLocaleString("en-US", { minimumIntegerDigits: 2 });
   }
 }

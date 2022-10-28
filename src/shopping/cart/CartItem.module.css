@@ -1,0 +1,45 @@
+.cartItem {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+}
+
+.cartItem h1{
+    font-size: x-large;
+}
+
+.itemInfo{
+    width: 90%;
+}
+
+.amounts{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.amounts h3{
+    color: #b94517;
+}
+
+.amounts input{
+    margin-left: 1rem;
+    width: 3rem;
+    height: 2rem;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.buttons button{
+    margin: 0.2rem;
+    margin-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: #2c0d00;
+    background-color: white;
+    border: 1px solid #2c0d00
+}
