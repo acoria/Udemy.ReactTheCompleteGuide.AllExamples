@@ -15,9 +15,19 @@ export const Cart: React.FC = () => {
           <CartItem item={cartItem.item} key={cartItem.item.id} />
         ))}
       <div className={styles.amount}>
-        {/* <hr></hr> */}
         <h1 className={styles.totalLabel}>Total amount</h1>
         <h1>{`€${cartContext.totalCartAmount}`}</h1>
+      </div>
+      <div className={styles.buttons}>
+        <button
+          className={styles.closeButton}
+          onClick={cartContext.closeCartHandler}
+        >
+          Close
+        </button>
+        <div className={styles.mainActionButton}>
+          <button>Order</button>
+        </div>
       </div>
     </Card>
   );

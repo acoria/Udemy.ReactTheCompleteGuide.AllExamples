@@ -4,19 +4,48 @@
   width: 60rem;
 }
 
-.amount{
-    display: flex;
-    flex-direction: row;
-    border-top: 1px solid black;
-    margin-left: 1rem;
-    margin-right: 1rem;
+.cart button {
+  color: #2c0d00;
+  background-color: white;
+  border: 1px solid #2c0d00;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  width: auto;
 }
 
-.amount h1{
-    font-size: x-large;
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
 }
 
-.totalLabel{
-    margin-left: 1rem;
-    width: 88%
+.closeButton {
+  border-radius: 20px;
+}
+
+.mainActionButton button{
+  color: white;
+  background-color: #b94517;
+  border: 0px;
+  border-radius: 20px;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  margin-left: 0.5rem;
+  margin-right: 1rem;
+  width: auto;
+}
+
+.amount {
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid black;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.amount h1 {
+  font-size: x-large;
+}
+
+.totalLabel {
+  margin-left: 1rem;
+  width: 88%;
 }

@@ -13,10 +13,14 @@ import { Card } from "./ui/Card";
 export const ShoppingApp: React.FC = () => {
   const [totalCartItemCount, setTotalCartItemCount] = useState(0);
   const [totalCartAmount, setTotalCartAmount] = useState(0);
-  //TODO: add empty array
-  const [cartItems, setCartItems] = useState<ICartItem[]>([
-    { item: FoodList[0], amount: 1 },
-  ]);
+  const setupCartItems = () => {
+    const cartItems: ICartItem[] = [];
+    FoodList.forEach((food: Item, index: number) => {
+      cartItems[food.id] = { item: food, amount: 0 };
+    });
+    return cartItems;
+  };
+  const [cartItems, setCartItems] = useState<ICartItem[]>(setupCartItems());
   const [displayCart, setDisplayCart] = useState(false);
 
   const onAddItemToCartHandler = (item: Item, amount: number) => {
