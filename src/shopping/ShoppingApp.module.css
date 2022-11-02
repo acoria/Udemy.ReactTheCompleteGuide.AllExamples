@@ -5,7 +5,7 @@
   align-items: center;
   width: 70rem;
   height: 100vh;
-  background-image: url("images/sushi.jpg");
+  background-image: url("assets/sushi.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
 }

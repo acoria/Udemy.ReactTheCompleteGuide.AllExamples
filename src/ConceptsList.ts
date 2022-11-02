@@ -11,6 +11,7 @@ export const concepts: IConcept[] = [
   {
     name: "Food ordering",
     description: "Order food online",
+    topics: ["All principles needed for a basic React App"],
     component: ShoppingApp,
   },
   {
