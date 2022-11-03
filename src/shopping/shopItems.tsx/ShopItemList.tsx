@@ -8,8 +8,8 @@ export const ShopItemList: React.FC<{ items: Item[] }> = (props) => {
     <Card className={styles.shopItemList}>
       <ul>
         {props.items.map((item) => (
-          <li>
-            <ShopItem key={item.id} item={item} />
+          <li key={item.id}>
+            <ShopItem item={item} />
           </li>
         ))}
       </ul>
