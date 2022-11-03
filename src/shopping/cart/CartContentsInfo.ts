@@ -40,32 +40,24 @@ export class CartContentsInfo {
   ) {
     const newCartItems = [...cartItems];
     const cartItem = cartItems[item.id];
-    if (cartItem == null) {
-      newCartItems[item.id] = { item: item, amount: amount };
-    } else {
-      newCartItems[item.id] = {
-        ...cartItem,
-        amount: amountUpdateCalculation(cartItem.amount, amount),
-      };
-    }
+    newCartItems[item.id] = {
+      ...cartItem,
+      amount: amountUpdateCalculation(cartItem.amount, amount),
+    };
     return newCartItems;
   }
 
   calculateTotalItemCount(cartItems: ICartItem[]): number {
-    let totalItemCount = 0;
-    cartItems.forEach((cartItem) => {
-      totalItemCount = totalItemCount + cartItem.amount;
-    });
-
-    return totalItemCount;
+    return cartItems.reduce((prevCount, cartItem) => {
+      return prevCount + cartItem.amount;
+    }, 0);
   }
 
   calculateTotalCartAmount(cartItems: ICartItem[]): number {
-    let totalAmount = 0;
-    cartItems.forEach(
-      (cartItem) =>
-        (totalAmount = totalAmount + cartItem.amount * +cartItem.item.price)
+    return cartItems.reduce(
+      (prevPrice, cartItem) =>
+        prevPrice + cartItem.amount * +cartItem.item.price,
+      0
     );
-    return +totalAmount.toLocaleString("en-US", { minimumIntegerDigits: 2 });
   }
 }

@@ -4,6 +4,11 @@
   width: 60rem;
 }
 
+.cartItems {
+  max-height: 30rem;
+  overflow: scroll;
+}
+
 .cart button {
   color: #2c0d00;
   background-color: white;
@@ -22,7 +27,7 @@
   border-radius: 20px;
 }
 
-.mainActionButton button{
+.mainActionButton button {
   color: white;
   background-color: #b94517;
   border: 0px;
