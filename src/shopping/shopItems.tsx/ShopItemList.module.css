@@ -1,6 +1,13 @@
 .shopItemList {
-  width: 90%;
+  width: 50rem;
+  padding: 0.5rem;
 }
 .shopItemList hr {
   border-top: 3px solid #bbb;
+}
+
+.shopItemList ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }

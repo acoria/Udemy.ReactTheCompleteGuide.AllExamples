@@ -13,6 +13,7 @@
 
 .cartName {
   color: white;
+  width: fit-content;
 }
 
 .itemAmount {

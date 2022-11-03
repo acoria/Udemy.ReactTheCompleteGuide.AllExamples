@@ -25,9 +25,9 @@ export const Cart: React.FC = () => {
         >
           Close
         </button>
-        <div className={styles.mainActionButton}>
+        <span className={styles.mainActionButton}>
           <button>Order</button>
-        </div>
+        </span>
       </div>
     </Card>
   );

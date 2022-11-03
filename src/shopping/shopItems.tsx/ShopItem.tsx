@@ -4,12 +4,12 @@ import { Item } from "../model/Item";
 import styles from "./ShopItem.module.css";
 
 export const ShopItem: React.FC<{ item: Item }> = (props) => {
-  const [amount, setAmount] = useState("0");
+  const [amount, setAmount] = useState("1");
   const cartContext = useContext(CartContext);
 
   return (
-    <div className={styles.shopItem}>
-      <div className={styles.itemInfo}>
+    <section className={styles.shopItem}>
+      <section className={styles.itemInfo}>
         <div className={styles.itemTitle}>
           <h3>{props.item.title}</h3>
         </div>
@@ -19,7 +19,7 @@ export const ShopItem: React.FC<{ item: Item }> = (props) => {
         <div className={styles.itemPrice}>
           <h3>{`€${props.item.price}`}</h3>
         </div>
-      </div>
+      </section>
       <div className={styles.itemAmount}>
         <div className={styles.itemAmountInfo}>
           <label htmlFor="itemAmount">Amount</label>
@@ -33,12 +33,12 @@ export const ShopItem: React.FC<{ item: Item }> = (props) => {
         <button
           onClick={() => {
             cartContext.addItemToCartHandler(props.item, +amount);
-            setAmount("0");
+            setAmount("1");
           }}
         >
           + Add
         </button>
       </div>
-    </div>
+    </section>
   );
 };
