@@ -4,10 +4,13 @@ import { GoalApp } from "./goal_app/components/GoalApp";
 import { LoginApp } from "./login_app/LoginApp";
 import { LoginAppWithAuth } from "./login_app_with_auth_component/LoginAppWithAuth";
 import { Playground } from "./playground_app/Playground";
+import { Performance } from "./performance/Performance";
 import { ShoppingApp } from "./shopping/ShoppingApp";
 import { UserApp } from "./user_app/UserApp";
 
 export const concepts: IConcept[] = [
+  { name: "Playground", component: Playground },
+  { name: "Performance", description: "Contains performance improvements", topics: ["React.memo()", "useCallback()", "useMemo()"], component: Performance },
   {
     name: "Food ordering",
     description: "Order food online",
@@ -26,9 +29,9 @@ export const concepts: IConcept[] = [
     topics: [
       "LocalStorage",
       "Debouncing",
-      "useEffect",
-      "useReducer",
-      "useContext",
+      "useEffect()",
+      "useReducer()",
+      "useContext()",
     ],
     component: LoginApp,
   },
@@ -48,5 +51,4 @@ export const concepts: IConcept[] = [
   },
   { name: "My Goal App", component: GoalApp },
   { name: "Expenses App", component: ExpensesApp },
-  { name: "Playground", component: Playground },
 ];

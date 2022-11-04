@@ -5,7 +5,6 @@ import { CartContext } from "./store/CartContext";
 
 export const CartItem: React.FC<{ item: Item }> = (props) => {
   const cartContext = useContext(CartContext);
-  //Error:
   const itemCount = () => cartContext.cartItems[props.item.id].amount;
 
   const onAddItemHandler = () => {

@@ -1,24 +1,19 @@
-import { useState } from "react";
-import { DoNotRenderMe } from "./DoNotRenderMe";
-import styles from "./Playground.module.css";
-import { RenderMe } from "./RenderMe";
-
-let counter = 1;
-
 export const Playground: React.FC = () => {
-  const [text, setText] = useState("Text");
+  const sorted = [10, 3, 6, 7, 2].sort((a, b) => {
+    if (a === 10) {
+      return -1;
+    } else if (b === 10) {
+      return 1;
+    } else {
+      return a - b;
+    }
+  });
+
   return (
-    <div className={styles.playground}>
-      <RenderMe name={text} />
-      <DoNotRenderMe />
-      <button
-        onClick={() => {
-          counter = counter + 1;
-          setText(`${counter} - new Text`);
-        }}
-      >
-        Change state
-      </button>
-    </div>
+    <>
+      {sorted.map((value) => (
+        <h1>{value}</h1>
+      ))}
+    </>
   );
 };

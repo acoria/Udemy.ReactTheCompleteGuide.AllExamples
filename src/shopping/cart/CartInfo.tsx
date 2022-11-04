@@ -13,7 +13,6 @@ export const CartInfo: React.FC = () => {
   useEffect(() => {
     setIsButtonHighlighted(true);
     const timer = setTimeout(() => setIsButtonHighlighted(false), 300);
-    setIsButtonHighlighted(true);
     return () => {
       clearTimeout(timer);
     };
@@ -23,7 +22,6 @@ export const CartInfo: React.FC = () => {
     <div className={className}>
       <button onClick={cartContext.openCartHandler}>
         <CartIcon />
-        {/* <img src="../images/shopping_cart.png"/> */}
         <div className={styles.cartName}>Your Cart</div>
         <div className={styles.itemAmount}>
           {cartContext.totalCartItemCount}
