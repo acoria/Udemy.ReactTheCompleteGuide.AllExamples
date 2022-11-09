@@ -1,28 +1,33 @@
 import { IConcept } from "./concepts/IConcept";
-import { ExpensesApp } from "./expensesApp/ExpensesApp";
-import { GoalApp } from "./goal_app/components/GoalApp";
-import { LoginApp } from "./login_app/LoginApp";
-import { LoginAppWithAuth } from "./login_app_with_auth_component/LoginAppWithAuth";
-import { Playground } from "./playground_app/Playground";
-import { Performance } from "./performance/Performance";
-import { ShoppingApp } from "./shopping/ShoppingApp";
-import { UserApp } from "./user_app/UserApp";
+import { ExpensesAppWrapper } from "./expensesApp/ExpensesAppWrapper";
+import { GoalAppWrapper } from "./goal_app/GoalAppWrapper";
+import { LoginAppWrapper } from "./login_app/LoginAppWrapper";
+import { LoginAppWithAuthWrapper } from "./login_app_with_auth_component/LoginAppWithAuthWrapper";
+import { PerformanceWrapper } from "./performance/PerformanceWrapper";
+import { PlaygroundWrapper } from "./playground_app/PlaygroundWrapper";
+import { ShoppingAppWrapper } from "./shopping/ShoppingAppWrapper";
+import { UserAppWrapper } from "./user_app/UserAppWrapper";
 
 export const concepts: IConcept[] = [
-  { name: "Playground", component: Playground },
-  { name: "Performance", description: "Contains performance improvements", topics: ["React.memo()", "useCallback()", "useMemo()"], component: Performance },
+  { name: "Playground", description: "This is a playground for trying out anything you want. So go crazy!", component: PlaygroundWrapper },
+  {
+    name: "Performance",
+    description: "Contains performance improvements",
+    topics: ["React.memo()", "useCallback()", "useMemo()"],
+    component: PerformanceWrapper,
+  },
   {
     name: "Food ordering",
     description: "Order food online",
     topics: ["All principles needed for a basic React App"],
-    component: ShoppingApp,
+    component: ShoppingAppWrapper,
   },
   {
     name: "Login with AuthComponent",
     topics: [
       "React context with a separate AuthComponent handling login/logout",
     ],
-    component: LoginAppWithAuth,
+    component: LoginAppWithAuthWrapper,
   },
   {
     name: "Login",
@@ -33,7 +38,7 @@ export const concepts: IConcept[] = [
       "useReducer()",
       "useContext()",
     ],
-    component: LoginApp,
+    component: LoginAppWrapper,
   },
   {
     name: "User App",
@@ -47,8 +52,8 @@ export const concepts: IConcept[] = [
       "Validation and resetting",
       "Modals",
     ],
-    component: UserApp,
+    component: UserAppWrapper,
   },
-  { name: "My Goal App", component: GoalApp },
-  { name: "Expenses App", component: ExpensesApp },
+  { name: "My Goal App", component: GoalAppWrapper },
+  { name: "Expenses App", component: ExpensesAppWrapper },
 ];
