@@ -3,13 +3,20 @@ import { ExpensesAppWrapper } from "./expensesApp/ExpensesAppWrapper";
 import { GoalAppWrapper } from "./goal_app/GoalAppWrapper";
 import { LoginAppWrapper } from "./login_app/LoginAppWrapper";
 import { LoginAppWithAuthWrapper } from "./login_app_with_auth_component/LoginAppWithAuthWrapper";
+import { MovieAppWrapper } from "./movie_app/MovieAppWrapper";
 import { PerformanceWrapper } from "./performance/PerformanceWrapper";
 import { PlaygroundWrapper } from "./playground_app/PlaygroundWrapper";
 import { ShoppingAppWrapper } from "./shopping/ShoppingAppWrapper";
 import { UserAppWrapper } from "./user_app/UserAppWrapper";
 
 export const concepts: IConcept[] = [
-  { name: "Playground", description: "This is a playground for trying out anything you want. So go crazy!", component: PlaygroundWrapper },
+  { name: "Movies", component: MovieAppWrapper },
+  {
+    name: "Playground",
+    description:
+      "This is a playground for trying out anything you want. So go crazy!",
+    component: PlaygroundWrapper,
+  },
   {
     name: "Performance",
     description: "Contains performance improvements",

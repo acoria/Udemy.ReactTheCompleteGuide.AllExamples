@@ -1,0 +1,9 @@
+.movieApp {
+  margin: 1rem;
+  text-align: center;
+}
+.movieApp button {
+  border-radius: 20px;
+  width: fit-content;
+  background-color: purple;
+}

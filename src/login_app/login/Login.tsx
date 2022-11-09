@@ -1,5 +1,5 @@
 import { useEffect, useReducer, useState } from "react";
-import { Card } from "../UI/Card";
+import { Card } from "../../ui/Card";
 import styles from "./Login.module.css";
 
 type passwordAction =

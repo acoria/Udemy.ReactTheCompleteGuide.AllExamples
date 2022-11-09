@@ -1,0 +1,15 @@
+.movieList {
+  text-align: center;
+  width: 60rem;
+}
+
+.movie {
+  background-color: purple;
+  color: white;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.movie h1 {
+  color: orange;
+}
