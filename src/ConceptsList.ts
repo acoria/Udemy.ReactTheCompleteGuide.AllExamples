@@ -1,4 +1,5 @@
 import { IConcept } from "./concepts/IConcept";
+import { CustomHooksWrapper } from "./custom_hooks_app/CustomHooksWrapper";
 import { ExpensesAppWrapper } from "./expensesApp/ExpensesAppWrapper";
 import { GoalAppWrapper } from "./goal_app/GoalAppWrapper";
 import { LoginAppWrapper } from "./login_app/LoginAppWrapper";
@@ -11,6 +12,7 @@ import { ShoppingAppWrapper } from "./shopping/ShoppingAppWrapper";
 import { UserAppWrapper } from "./user_app/UserAppWrapper";
 
 export const concepts: IConcept[] = [
+  { name: "Custom Hooks", component: CustomHooksWrapper },
   {
     name: "Own Backend",
     description: "Connects to a local backend",

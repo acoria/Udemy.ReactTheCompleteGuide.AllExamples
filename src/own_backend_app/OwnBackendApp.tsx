@@ -6,6 +6,7 @@ import { PersonList } from "./PersonList";
 
 export const OwnBackendApp: React.FC = () => {
   const [persons, setPersons] = useState<IPerson[]>([]);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const mapToPerson = (json: any): IPerson[] => {
     return json.map((personData: any) => {
@@ -18,13 +19,18 @@ export const OwnBackendApp: React.FC = () => {
   };
 
   const getPersons = async () => {
-    const response = await fetch("http://localhost:8080/api/persons");
-    const json = await response.json();
-    setPersons(mapToPerson(json));
+    try {
+      const response = await fetch("http://localhost:8080/api/persons");
+      const json = await response.json();
+      setPersons(mapToPerson(json));
+    } catch (error) {
+      setErrorMessage("Server error. Is it running?");
+    }
   };
   getPersons();
   return (
     <div className={styles.ownBackendApp}>
+      {errorMessage !== "" && <h3>{`Oops: ${errorMessage}`}</h3>}
       <AddPerson />
       <PersonList persons={persons} />
     </div>
