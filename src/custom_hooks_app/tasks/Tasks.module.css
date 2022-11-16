@@ -1,0 +1,8 @@
+.tasks {
+  display: flex;
+  flex-direction: column;
+}
+
+.tasks h3 {
+  color: blueviolet;
+}

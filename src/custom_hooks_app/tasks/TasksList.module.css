@@ -1,0 +1,19 @@
+.tasksList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+}
+
+.tasksList button{
+  width: auto;
+}
+
+.singleTask {
+  padding: 0.5rem;
+  width: 400px;
+}
+
+.singleTask h3 {
+  color: purple;
+}

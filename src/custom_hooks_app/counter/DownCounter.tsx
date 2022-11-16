@@ -1,6 +1,6 @@
-import { Card } from "../ui/Card";
+import { Card } from "../../ui/Card";
 import styles from "./DownCounter.module.css";
-import { useCounter } from "./useCounter";
+import { useCounter } from "./hooks/useCounter";
 
 export const DownCounter: React.FC = () => {
   const counter: number = useCounter((a) => a - 1);

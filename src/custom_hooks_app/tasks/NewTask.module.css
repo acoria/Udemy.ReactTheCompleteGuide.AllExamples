@@ -1,0 +1,8 @@
+.newTask label {
+  margin: 0.5rem;
+}
+.newTask button {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  width: 100px;
+}
