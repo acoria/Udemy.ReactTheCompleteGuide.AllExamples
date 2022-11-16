@@ -1,0 +1,10 @@
+.addMovie {
+  display: flex;
+  flex-direction: column;
+}
+
+.addMovie label {
+  font-size: medium;
+  font-weight: bold;
+  margin: 1rem;
+}

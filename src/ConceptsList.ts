@@ -4,13 +4,23 @@ import { GoalAppWrapper } from "./goal_app/GoalAppWrapper";
 import { LoginAppWrapper } from "./login_app/LoginAppWrapper";
 import { LoginAppWithAuthWrapper } from "./login_app_with_auth_component/LoginAppWithAuthWrapper";
 import { MovieAppWrapper } from "./movie_app/MovieAppWrapper";
+import { OwnBackendAppWrapper } from "./own_backend_app/OwnBackendAppWrapper";
 import { PerformanceWrapper } from "./performance/PerformanceWrapper";
 import { PlaygroundWrapper } from "./playground_app/PlaygroundWrapper";
 import { ShoppingAppWrapper } from "./shopping/ShoppingAppWrapper";
 import { UserAppWrapper } from "./user_app/UserAppWrapper";
 
 export const concepts: IConcept[] = [
-  { name: "Movies", component: MovieAppWrapper },
+  {
+    name: "Own Backend",
+    description: "Connects to a local backend",
+    component: OwnBackendAppWrapper,
+  },
+  {
+    name: "Movies",
+    topics: ["Asynchronous REST calls"],
+    component: MovieAppWrapper,
+  },
   {
     name: "Playground",
     description:

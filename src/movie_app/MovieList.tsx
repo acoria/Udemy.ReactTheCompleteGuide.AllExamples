@@ -1,8 +1,8 @@
 import { Card } from "../ui/Card";
-import { Movie } from "./Movie";
+import { IMovie } from "./IMovie";
 import styles from "./MovieList.module.css";
 
-export const MovieList: React.FC<{ movies: Movie[] }> = (props) => {
+export const MovieList: React.FC<{ movies: IMovie[] }> = (props) => {
   return (
     <div className={styles.movieList}>
       {props.movies.map((movie) => (
