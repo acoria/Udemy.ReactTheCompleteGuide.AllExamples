@@ -12,7 +12,7 @@ export const AddPerson: React.FC = () => {
         onSubmit={(event) => {
           event.preventDefault();
           fetch(
-            `http://localhost:8080/api/person?firstname=${firstname}&lastname=${lastname}`,
+            `http://localhost:8080/api/persons?firstname=${firstname}&lastname=${lastname}`,
             {
               method: "POST",
             }

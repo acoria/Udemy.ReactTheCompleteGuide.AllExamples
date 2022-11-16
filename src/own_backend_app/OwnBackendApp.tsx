@@ -3,6 +3,7 @@ import { AddPerson } from "./AddPerson";
 import { IPerson } from "./IPerson";
 import styles from "./OwnBackendApp.module.css";
 import { PersonList } from "./PersonList";
+import { Plant } from "./plant/Plant";
 
 export const OwnBackendApp: React.FC = () => {
   const [persons, setPersons] = useState<IPerson[]>([]);
@@ -30,6 +31,9 @@ export const OwnBackendApp: React.FC = () => {
   getPersons();
   return (
     <div className={styles.ownBackendApp}>
+      <h2>Plant</h2>
+      <Plant />
+      <h2>Persons</h2>
       {errorMessage !== "" && <h3>{`Oops: ${errorMessage}`}</h3>}
       <AddPerson />
       <PersonList persons={persons} />
