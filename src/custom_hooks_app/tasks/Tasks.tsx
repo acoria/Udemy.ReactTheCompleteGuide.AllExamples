@@ -44,7 +44,7 @@ export const Tasks: React.FC = () => {
         const jsonData = await response.json();
         const tasks: ITask[] = [];
         for (const key in jsonData) {
-          tasks.push({ id: jsonData[key].id, title: jsonData[key].title });
+          tasks.push({ id: key, title: jsonData[key].title });
         }
         setIsLoading(false);
         setTasks(tasks);

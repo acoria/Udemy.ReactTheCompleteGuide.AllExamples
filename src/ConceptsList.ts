@@ -1,6 +1,7 @@
 import { IConcept } from "./concepts/IConcept";
 import { CustomHooksWrapper } from "./custom_hooks_app/CustomHooksWrapper";
 import { ExpensesAppWrapper } from "./expensesApp/ExpensesAppWrapper";
+import { FormAppWrapper } from "./form_app/FormAppWrapper";
 import { GoalAppWrapper } from "./goal_app/GoalAppWrapper";
 import { LoginAppWrapper } from "./login_app/LoginAppWrapper";
 import { LoginAppWithAuthWrapper } from "./login_app_with_auth_component/LoginAppWithAuthWrapper";
@@ -12,6 +13,7 @@ import { ShoppingAppWrapper } from "./shopping/ShoppingAppWrapper";
 import { UserAppWrapper } from "./user_app/UserAppWrapper";
 
 export const concepts: IConcept[] = [
+  { name: "Forms", component: FormAppWrapper },
   { name: "Custom Hooks", component: CustomHooksWrapper },
   {
     name: "Own Backend",
