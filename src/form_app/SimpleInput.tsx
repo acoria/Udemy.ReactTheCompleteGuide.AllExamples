@@ -1,43 +1,47 @@
-import { useState } from "react";
+import { useInput } from "./useInput";
 
 export const SimpleInput: React.FC = () => {
-  const [enteredName, setEnteredName] = useState("");
-  const [enteredNameTouched, setEnteredNameTouched] = useState(false);
+  const {
+    enteredValue: enteredName,
+    setTouched: setEnteredNameTouched,
+    enteredValueIsValid: enteredNameIsValid,
+    hasError: nameHasError,
+    onValueInputChangedHandler: onNameInputChangedHandler,
+    onValueInputBlurredHandler: onNameInputBlurredHandler,
+    reset: resetNameInput,
+  } = useInput((enteredValue) => enteredValue.trim() !== "");
+  const {
+    enteredValue: enteredEmail,
+    setTouched: setEnteredEmailTouched,
+    enteredValueIsValid: enteredEmailIsValid,
+    hasError: emailHasError,
+    onValueInputChangedHandler: onEmailInputChangedHandler,
+    onValueInputBlurredHandler: onEmailInputBlurredHandler,
+    reset: resetEmailInput,
+  } = useInput((enteredValue) => enteredValue.includes("@"));
 
-  const enteredNameIsValid = enteredName.trim() !== "";
-  const enteredInputInvalid = !enteredNameIsValid && enteredNameTouched;
   let formIsValid = false;
-  if (enteredNameIsValid) {
+  if (enteredNameIsValid && enteredEmailIsValid) {
     formIsValid = true;
   }
-  const enteredInputClasses = enteredInputInvalid
-    ? "form-control invalid"
-    : "form-control";
-
-  const onNameInputChangedHandler = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setEnteredNameTouched(true);
-    setEnteredName(event.target.value);
-  };
-
-  const onNameInputBlurredHandler = () => {
-    setEnteredNameTouched(true);
-  };
+  const validClass = "form-control";
+  const invalidClass = "form-control invalid";
+  const enteredNameInputClasses = nameHasError ? invalidClass : validClass;
+  const enteredEmailInputClasses = emailHasError ? invalidClass : validClass;
 
   const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(enteredName);
     setEnteredNameTouched(true);
-    if (!enteredNameIsValid) {
+    setEnteredEmailTouched(true);
+    if (!formIsValid) {
       return;
     }
-    setEnteredName("");
-    setEnteredNameTouched(false);
+    resetNameInput();
+    resetEmailInput();
   };
   return (
     <form onSubmit={onSubmitHandler}>
-      <div className={enteredInputClasses}>
+      <div className={enteredNameInputClasses}>
         <label htmlFor="name">Your Name</label>
         <input
           type="text"
@@ -46,10 +50,24 @@ export const SimpleInput: React.FC = () => {
           onChange={onNameInputChangedHandler}
           onBlur={onNameInputBlurredHandler}
         />
-        {enteredInputInvalid && (
+        {nameHasError && (
           <p className="form-control error-text">Entered name is invalid</p>
         )}
       </div>
+      <div className={enteredEmailInputClasses}>
+        <label htmlFor="email">Your E-Mail</label>
+        <input
+          type="email"
+          id="email"
+          value={enteredEmail}
+          onChange={onEmailInputChangedHandler}
+          onBlur={onEmailInputBlurredHandler}
+        />
+        {emailHasError && (
+          <p className="form-control error-text">Entered e-mail is invalid</p>
+        )}
+      </div>
+
       <div className="form-actions">
         <button disabled={!formIsValid}>Submit</button>
       </div>
