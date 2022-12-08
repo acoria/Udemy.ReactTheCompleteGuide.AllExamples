@@ -9,10 +9,12 @@ import { MovieAppWrapper } from "./movie_app/MovieAppWrapper";
 import { OwnBackendAppWrapper } from "./own_backend_app/OwnBackendAppWrapper";
 import { PerformanceWrapper } from "./performance/PerformanceWrapper";
 import { PlaygroundWrapper } from "./playground_app/PlaygroundWrapper";
+import { ReduxWrapper } from "./redux_app/ReduxWrapper";
 import { ShoppingAppWrapper } from "./shopping/ShoppingAppWrapper";
 import { UserAppWrapper } from "./user_app/UserAppWrapper";
 
 export const concepts: IConcept[] = [
+  { name: "Redux", component: ReduxWrapper },
   { name: "Forms", component: FormAppWrapper },
   { name: "Custom Hooks", component: CustomHooksWrapper },
   {
