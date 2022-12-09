@@ -3,7 +3,6 @@ import { IReduxState } from "./IReduxState";
 import { counterActions } from "./ToolkitReduxStore";
 
 export const ToolkitReduxApp: React.FC = () => {
-//   const counter2 = useSelector((state) => state.counter.counterReducer);
   const counter = useSelector<IReduxState, number>((state) => state.counter);
   const showCounter = useSelector<IReduxState, boolean>(
     (state) => state.showCounter

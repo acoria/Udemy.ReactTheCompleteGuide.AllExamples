@@ -7,13 +7,13 @@ const counterSlice = createSlice({
   name: "counter",
   initialState,
   reducers: {
-    //method names are unique identifiers
+    //method names act as unique identifier for actions
     increment(state) {
       state.counter++;
     },
     decrement(state) {
-        //unlike in the SimpleReduxStore, here the state is copied internally, so the state can be manipulated
-        //"directly" and only the attributes that need changing have to be set
+      //unlike in the SimpleReduxStore, here the state is copied internally, so the state can be manipulated
+      //"directly" and only the attributes that need changing have to be set
       state.counter--;
     },
     add(state, action) {
@@ -24,7 +24,6 @@ const counterSlice = createSlice({
     },
   },
 });
-
 export const ToolkitReduxStore = configureStore({
   reducer: counterSlice.reducer,
 });

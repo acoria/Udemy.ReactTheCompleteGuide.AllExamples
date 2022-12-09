@@ -10,11 +10,29 @@ import { OwnBackendAppWrapper } from "./own_backend_app/OwnBackendAppWrapper";
 import { PerformanceWrapper } from "./performance/PerformanceWrapper";
 import { PlaygroundWrapper } from "./playground_app/PlaygroundWrapper";
 import { ReduxWrapper } from "./redux_app/ReduxWrapper";
+import { RoutingAppWrapper } from "./routing_app/RoutingAppWrapper";
 import { ShoppingAppWrapper } from "./shopping/ShoppingAppWrapper";
 import { UserAppWrapper } from "./user_app/UserAppWrapper";
 
 export const concepts: IConcept[] = [
-  { name: "Redux", component: ReduxWrapper },
+  {
+    name: "Routing",
+    description:
+      "Works with library 'React-Router' (react-router-dom@5) to enable client-site routing of pages.",
+    topics: [
+      "BrowserRouter: Wrap your application into this component to enable routing",
+      "Route: Define a route which can be navigated to e.g. /products",
+      "Link: Define a link -> A wrapper around an '<a href..> element without the disadvantage of reloading the entire page (optionally)",
+      "NavLink: Same as link but with the possibility to define an activeClassName to highlight that a certain page is active",
+    ],
+    component: RoutingAppWrapper,
+  },
+  {
+    name: "Redux",
+    description:
+      "Works with library 'Redux' to handle state externally by a store.",
+    component: ReduxWrapper,
+  },
   { name: "Forms", component: FormAppWrapper },
   { name: "Custom Hooks", component: CustomHooksWrapper },
   {
