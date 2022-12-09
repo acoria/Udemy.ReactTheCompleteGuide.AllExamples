@@ -24,6 +24,10 @@ export const concepts: IConcept[] = [
       "Route: Define a route which can be navigated to e.g. /products",
       "Link: Define a link -> A wrapper around an '<a href..> element without the disadvantage of reloading the entire page (optionally)",
       "NavLink: Same as link but with the possibility to define an activeClassName to highlight that a certain page is active",
+      "useParams: Hook to transfer parameters within the url",
+      "useHistory: To navigate imperatively/navigate a user to a page",
+      "Prompt: prevent unwanted transitions -> ensure data is not lost by navigating mistakenly to another page",
+      "useLocation: To extract query parameters from the url"
     ],
     component: RoutingAppWrapper,
   },
