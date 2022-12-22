@@ -27,7 +27,8 @@ export const concepts: IConcept[] = [
       "useParams: Hook to transfer parameters within the url",
       "useHistory: To navigate imperatively/navigate a user to a page",
       "Prompt: prevent unwanted transitions -> ensure data is not lost by navigating mistakenly to another page",
-      "useLocation: To extract query parameters from the url"
+      "useLocation: To extract query parameters from the url",
+      "query parameters to e.g. set ?sort=asc"
     ],
     component: RoutingAppWrapper,
   },
