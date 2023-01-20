@@ -1,4 +1,8 @@
-import { Link, useHistory, useLocation, useParams } from "react-router-dom";
+// import { useHistory, useLocation, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+//Link is a wrapper around the anchor/"a" tag that prevents a reload of the page
+//location.pathname: contains the current path, so in this case /products
 
 export const products = [
   { id: "1", name: "Book" },
@@ -7,14 +11,19 @@ export const products = [
 ];
 
 export const Products: React.FC = () => {
-  const history = useHistory();
-  const location = useLocation();
-
-  const urlParams = new URLSearchParams(location.search);
-  const isSortingAscending = urlParams.get("sort") === "asc";
+  //Compatibility issues with Router dom 5 -> 6
+  // const history = useHistory();
+  // const location = useLocation();
+  // const urlParams = new URLSearchParams(location.search);
+  // const isSortingAscending = urlParams.get("sort") === "asc";
 
   const onSortButtonClickHandler = () => {
-    history.push(`/products?sort=${isSortingAscending ? "desc" : "asc"}`);
+    //as an alternative to a string, push also takes an object as a path for better readability
+    // history.push(`${location.pathname}?sort=${isSortingAscending ? "desc" : "asc"}`);
+    // history.push({
+    //   pathname: location.pathname,
+    //   search: `?sort=${isSortingAscending ? "desc" : "asc"}`,
+    // });
   };
 
   const sortProducts = (
@@ -30,21 +39,24 @@ export const Products: React.FC = () => {
     });
   };
 
-  const sortedProducts = sortProducts(products, isSortingAscending);
+  // const sortedProducts = sortProducts(products, isSortingAscending);
 
   return (
     <section>
-      <h1>Our Products</h1>
+      {/* <h1>Our Products</h1>
       <button onClick={onSortButtonClickHandler}>
         Sort {isSortingAscending ? "descending" : "ascending"}
       </button>
       <ul>
         {sortedProducts.map((product) => (
-          <li>
-            <Link to={`/products/${product.id}`}>{product.name}</Link>
+          <li key={product.id}>
+            //Compatibility issues with Router dom 5 -> 6
+            <Link to={`${location.pathname}/${product.id}`}>
+              {product.name}
+            </Link>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </section>
   );
 };

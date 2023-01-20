@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Prompt, useHistory } from "react-router-dom";
+//Compatibility issues with Router dom 5 -> 6
+// import { Prompt, useHistory } from "react-router-dom";
 
 export const InputWithPrompt: React.FC = () => {
-  const history = useHistory();
+  // const history = useHistory();
   const [isEditing, setIsEditing] = useState(false);
 
   const onFocusHandler = () => {
@@ -15,16 +16,16 @@ export const InputWithPrompt: React.FC = () => {
 
   return (
     <>
-      <Prompt
+      {/* <Prompt
         when={isEditing}
         message={(location) =>
           "Are you sure you want to leave already? Any entered data will be lost :("
         }
-      />
+      /> */}
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          history.push("/welcome");
+          // history.push("/welcome");
         }}
       >
         <input onFocus={onFocusHandler}></input>

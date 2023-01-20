@@ -1,4 +1,4 @@
-import { Redirect, Route, Switch } from "react-router-dom";
+// import { Redirect, Route, Switch } from "react-router-dom";
 import { MainHeader } from "./components/MainHeader";
 import { NotFound } from "./pages/NotFound";
 import { History } from "./pages/History";
@@ -17,10 +17,12 @@ import { InputWithPrompt } from "./pages/InputWithPrompt";
 //exact: the path will only match, if it is exactly the one defined and nothing additional such as a product id
 
 //* is a placeholder for any value, so it can be used as a fallback at the end of the routing
+
 export const RoutingApp: React.FC = () => {
   return (
     <>
-      <h3>Routing is active. Choose /welcome or /products</h3>
+      {/*Compatibility issues with Router dom 5 -> 6 */}
+      {/* <h3>Routing is active. Choose /welcome or /products</h3>
       <MainHeader />
       <main>
         <Switch>
@@ -46,7 +48,7 @@ export const RoutingApp: React.FC = () => {
             <NotFound />
           </Route>
         </Switch>
-      </main>
+      </main> */}
     </>
   );
 };
