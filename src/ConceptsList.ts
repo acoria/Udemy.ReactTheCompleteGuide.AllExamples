@@ -11,12 +11,18 @@ import { PerformanceWrapper } from "./performance/PerformanceWrapper";
 import { PlaygroundWrapper } from "./playground_app/PlaygroundWrapper";
 import { ReduxWrapper } from "./redux_app/ReduxWrapper";
 import { RoutingAppWrapper } from "./routing_app/RoutingAppWrapper";
+import { Routing6AppWrapper } from "./routing_app_version_6/Routing6AppWrapper";
 import { ShoppingAppWrapper } from "./shopping/ShoppingAppWrapper";
 import { UserAppWrapper } from "./user_app/UserAppWrapper";
 
 export const concepts: IConcept[] = [
   {
-    name: "Routing",
+    name: "Routing (with react router dom version 6)",
+    description: "An updated version of routing using react-router-dom@6",
+    component: Routing6AppWrapper,
+  },
+  {
+    name: "Routing (with react router dom version 5)",
     description:
       "Works with library 'React-Router' (react-router-dom@5) to enable client-site routing of pages.",
     topics: [
@@ -28,7 +34,7 @@ export const concepts: IConcept[] = [
       "useHistory: To navigate imperatively/navigate a user to a page",
       "Prompt: prevent unwanted transitions -> ensure data is not lost by navigating mistakenly to another page",
       "useLocation: To extract query parameters from the url",
-      "query parameters to e.g. set ?sort=asc"
+      "query parameters to e.g. set ?sort=asc",
     ],
     component: RoutingAppWrapper,
   },
