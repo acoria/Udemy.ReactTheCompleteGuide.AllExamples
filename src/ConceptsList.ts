@@ -1,3 +1,4 @@
+import { AnimationsAppWrapper } from "./animations_app/AnimationsAppWrapper";
 import { IConcept } from "./concepts/IConcept";
 import { CustomHooksWrapper } from "./custom_hooks_app/CustomHooksWrapper";
 import { ExpensesAppWrapper } from "./expensesApp/ExpensesAppWrapper";
@@ -16,6 +17,7 @@ import { ShoppingAppWrapper } from "./shopping/ShoppingAppWrapper";
 import { UserAppWrapper } from "./user_app/UserAppWrapper";
 
 export const concepts: IConcept[] = [
+  { name: "Animations", component: AnimationsAppWrapper },
   {
     name: "Routing (with react router dom version 6)",
     description: "An updated version of routing using react-router-dom@6",
